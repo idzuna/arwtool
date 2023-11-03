@@ -10,25 +10,30 @@ ARW ファイル（ソニー製デジタルスチルカメラが出力する RAW
 > [!WARNING]
 > このツールは ARW ファイルを直接書き換えます。大切な撮影データの喪失を防ぐため、必ずあらかじめバックアップを取るようにしてください。不具合や誤操作によるいかなる損害も作者は責任を負いません。
 
+### store-versionstack
 ```
 arwtool store-versionstack RAW-FILE VERSIONSTACK-FILE
 ```
 ARW ファイル `RAW-FILE` のバージョンスタック情報を抽出して `VERSIONSTACK-FILE` へ書き出します。
 
+### restore-versionstack
+
 ```
 arwtool restore-versionstack RAW-FILE VERSIONSTACK-FILE
 ```
-書き出されたバージョンスタック情報 `VERSIONSTACK-FILE` を ARW ファイル `RAW-FILE` に埋め込みます。すでに ARW ファイルにバージョンスタックが存在する場合は削除してから埋め込みます。
+書き出されたバージョンスタック情報 `VERSIONSTACK-FILE` を ARW ファイル `RAW-FILE` に埋め込みます。すでに ARW ファイルにバージョンスタック情報が存在する場合は削除してから埋め込みます。
 
+### remove-versionstack
 ```
 arwtool remove-versionstack RAW-FILE
 ```
 ARW ファイル `RAW-FILE` から書き出したバージョンスタック情報を削除します。
 
+### trace
 ```
 arwtool trace RAW-FILE
 ```
-デバッグ用です。ファイル構造が表示されますが、公式資料があるわけではないのでそれぞれのフィールドの値が何を意味しているのか、本当に正しくパースできているのかは不明です。
+デバッグ用です。公式資料があったりするわけではなく ARW ファイルを目で見て雰囲気で解析しただけなので、それぞれのフィールドの値が何を意味しているのか、本当に正しくパースできているのかは不明です。
 
 ## ビルド方法
 
@@ -50,4 +55,9 @@ cl /std:c++17 /EHsc arwtool.cpp
 ```
 
 Visual Studio 2022 の IDE でビルドしたい場合は arwtool.sln を開いてビルドしてください。
+
+## 連絡先
+
+https://twitter.com/idzuna_tan
+
 
